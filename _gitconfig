@@ -1,0 +1,15 @@
+[user]
+	name = Adam Gotterer
+	email = adam@lot18.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[push]
+    default = matching
+
+[core]
+	editor = ~/bin/vim
+	quotepath = false
+                                                                                    

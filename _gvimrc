@@ -1,0 +1,2 @@
+macm Window.Select\ Previous\ Tab  key=<D-S-Left>
+macm Window.Select\ Next\ Tab	   key=<D-S-Right>
