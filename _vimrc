@@ -54,3 +54,5 @@ set cursorline
 "Stores .swp files in a single directory
 set directory=~/.vim/swap,.
 
+"delete trailing whitespace on save:
+au BufWritePre *.py mark `|:%s/\s\+$//e|normal ``
