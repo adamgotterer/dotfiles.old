@@ -2,6 +2,9 @@ filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set nocompatible
+au FileType py set tabstop=4
+au FileType py set shiftwidth=4
+au FileType py set expandtab
 "set autoindent
 "set smartindent
 "set tabstop=4
