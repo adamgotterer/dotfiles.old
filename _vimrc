@@ -2,9 +2,6 @@ filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set nocompatible
-au FileType py set tabstop=4
-au FileType py set shiftwidth=4
-au FileType py set expandtab
 "set autoindent
 "set smartindent
 "set tabstop=4
@@ -59,3 +56,15 @@ set directory=~/.vim/swap,.
 
 "delete trailing whitespace on save:
 au BufWritePre *.py mark `|:%s/\s\+$//e|normal ``
+
+"Python tabs
+au FileType py setlocal tabstop=4
+au FileType py setlocal shiftwidth=4
+au FileType py setlocal expandtab
+
+" Bind capital W to write
+command! W :w
+
+" Sudo write
+cmap W! w !sudo tee % >/dev/null
+

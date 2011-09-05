@@ -10,6 +10,6 @@
     default = matching
 
 [core]
-	editor = ~/bin/vim
+	editor = /Applications/MacVim.app/Contents/MacOS/vim
 	quotepath = false
                                                                                     
