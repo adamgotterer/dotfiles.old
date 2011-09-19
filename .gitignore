@@ -1,0 +1,15 @@
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+.project
+.TemporaryItems*
+
+# Text editor temp files #
+##########################
+*.swp
+*.swo
+.#*
+*.tmpproj
