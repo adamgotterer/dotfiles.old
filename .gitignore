@@ -10,6 +10,7 @@ Thumbs.db
 # Text editor temp files #
 ##########################
 *.swp
+*.swn
 *.swo
 .#*
 *.tmpproj
