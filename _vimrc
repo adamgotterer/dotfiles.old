@@ -1,12 +1,18 @@
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
-set nocompatible
-"set autoindent
-"set smartindent
-"set tabstop=4
-"set shiftwidth=4
-set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+set nocompatible            " don't be compatible with vi
+set nowrap                  " don't wrap text
+set linebreak               " don't wrap textin the middle of a word
+set autoindent              " always set autoindenting on
+set smartindent             " use smart indent if there is no indent file
+set tabstop=4               " <tab> inserts 4 spaces
+set shiftwidth=4            " but an indent level is 2 spaces wide.
+set softtabstop=4           " <BS> over an autoindent deletes both spaces.
+set expandtab               " Use spaces, not tabs, for autoindent/tab key.
+set shiftround              " rounds indent to a multiple of shiftwidth
+set matchpairs+=<:>         " show matching <> (html mainly) as well
+
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
@@ -57,10 +63,11 @@ set directory=~/.vim/swap,.
 "delete trailing whitespace on save:
 au BufWritePre *.py mark `|:%s/\s\+$//e|normal ``
 
-"Python tabs
-au FileType py setlocal tabstop=4
-au FileType py setlocal shiftwidth=4
-au FileType py setlocal expandtab
+"PHP tabs
+au FileType php setlocal tabstop=4
+au FileType php setlocal shiftwidth=4
+au FileType php setlocal softtabstop=4
+au FileType php setlocal noexpandtab
 
 " Bind capital W to write
 command! W :w
