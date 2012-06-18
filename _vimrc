@@ -68,6 +68,17 @@ au FileType php setlocal shiftwidth=4
 au FileType php setlocal softtabstop=4
 au FileType php setlocal noexpandtab
 
+"Ruby setup
+au FileType ruby setlocal  ic " Case insensitive search
+au FileType ruby setlocal  hls " Highlight search
+au FileType ruby setlocal  showmatch " Show matching brackets
+au FileType ruby setlocal  expandtab
+au FileType ruby setlocal  autoindent
+au FileType ruby setlocal tabstop=2
+au FileType ruby setlocal shiftwidth=2
+au FileType ruby setlocal softtabstop=2
+
+
 " Bind capital W to write
 command! W :w
 
