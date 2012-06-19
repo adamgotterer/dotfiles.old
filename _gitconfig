@@ -1,6 +1,6 @@
 [user]
 	name = Adam Gotterer
-	email = adam@lot18.com
+	email = agotterer@gmail.com
 [color]
     diff = auto
     status = auto
@@ -12,4 +12,5 @@
 [core]
 	editor = /Applications/MacVim.app/Contents/MacOS/vim
 	quotepath = false
-                                                                                    
+[alias]
+    lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
