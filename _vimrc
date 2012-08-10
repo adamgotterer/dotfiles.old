@@ -85,3 +85,12 @@ command! W :w
 " Sudo write
 cmap W! w !sudo tee % >/dev/null
 
+" Disable arrow keys
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
