@@ -1,4 +1,5 @@
 filetype off
+call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 set nocompatible            " don't be compatible with vi
