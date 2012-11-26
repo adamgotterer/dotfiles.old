@@ -1,4 +1,5 @@
 filetype off
+let g:pathogen_disabled = ['syntastic']
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
@@ -95,3 +96,8 @@ noremap  <Left> ""
 noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
+
+" Disable Macvim toolbar
+if has("gui_running")
+    set guioptions=-t
+endif 
