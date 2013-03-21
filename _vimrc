@@ -97,6 +97,8 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+map <F5> :setlocal spell! spelllang=en_us<CR>
+
 " Disable Macvim toolbar
 if has("gui_running")
     set guioptions=-t
