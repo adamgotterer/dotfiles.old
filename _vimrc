@@ -1,5 +1,5 @@
 filetype off
-let g:pathogen_disabled = ['syntastic']
+"let g:pathogen_disabled = ['syntastic']
 call pathogen#infect()
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
@@ -18,6 +18,7 @@ set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
+autocmd FileType ghmarkdown  setlocal shiftwidth=2 tabstop=2
 set backspace=indent,eol,start
 set showmatch
 set incsearch
@@ -87,15 +88,15 @@ command! W :w
 " Sudo write
 cmap W! w !sudo tee % >/dev/null
 
-" Disable arrow keys
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+"" Disable arrow keys
+"noremap  <Up> ""
+"noremap! <Up> <Esc>
+"noremap  <Down> ""
+"noremap! <Down> <Esc>
+"noremap  <Left> ""
+"noremap! <Left> <Esc>
+"noremap  <Right> ""
+"noremap! <Right> <Esc>
 
 map <F5> :setlocal spell! spelllang=en_us<CR>
 
