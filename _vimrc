@@ -63,7 +63,7 @@ set cursorline
 set directory=~/.vim/swap,.
 
 "delete trailing whitespace on save:
-au BufWritePre *.py mark `|:%s/\s\+$//e|normal ``
+au BufWritePre * mark `|:%s/\s\+$//e|normal ``
 
 "PHP tabs
 au FileType php setlocal tabstop=4
