@@ -103,9 +103,12 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 " Disable Macvim toolbar
 if has("gui_running")
     set guioptions=-t
-endif 
+endif
 
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+" forces air-line to show on all screens
+set laststatus=2
