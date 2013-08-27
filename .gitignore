@@ -14,3 +14,9 @@ Thumbs.db
 *.swo
 .#*
 *.tmpproj
+
+# Network history
+.netrwhist
+
+# Spelling
+_vim/spell
