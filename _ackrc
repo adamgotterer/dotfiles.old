@@ -15,7 +15,7 @@
 
 # JSON
 --type-set=json=.json
---type-add=js=.json
+--type-add=js=.js
 --type-add=yaml=.json
 
 # Conf
@@ -34,4 +34,10 @@
 --type-set=coffeescript=.coffee
 
 # Handlebars
---type-set=coffeescript=.handlebars
+--type-set=handlebars=.handlebars
+
+--ignore-dir=log
+
+--ignore-file=ext:pg_dump
+--ignore-file=ext:csv
+--ignore-file=ext:log
