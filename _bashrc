@@ -126,13 +126,6 @@ if [ "$venwrap" != "" ]; then
     source $venwrap
 fi
 
-# osx vim
-if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
-    PATH=/Applications/MacVim.app/Contents/MacOS/:$PATH
-fi
-
-function vi { /Applications/MacVim.app/Contents/MacOS/Vim -g $*; } 
-
 PATH=/usr/local/sbin:$PATH:/usr/local/mysql/bin
 export PATH
 
@@ -144,3 +137,5 @@ export EDITOR=vim
 # Add git and svn branch names
 export EDITOR=vim
 
+alias vi=gvim
+alias vim=gvim
