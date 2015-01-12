@@ -1,0 +1,11 @@
+# Dotfiles
+
+Managed with rcm: https://github.com/thoughtbot/rcm
+
+http://robots.thoughtbot.com/rcm-for-rc-files-in-dotfiles-repos
+
+```
+lsrc # Init
+
+rcup # link
+```

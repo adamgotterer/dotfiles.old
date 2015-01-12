@@ -2,6 +2,7 @@
 #export PATH=$PATH:$EC2_HOME/bin
 #export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
 #export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
+
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 #eval "$(rbenv init -)"
@@ -35,3 +36,9 @@ source ~/.bashrc
 mcd () { cd $(printf "../%.s" $(seq 1 $1)); }
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+
+# Make coreutils available on the path
+PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
+# Application path for installing cask apps
+HOMEBREW_CASK_OPTS="--appdir=/Applications"
