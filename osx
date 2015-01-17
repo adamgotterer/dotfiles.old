@@ -51,6 +51,9 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Group windows by application
+defaults write com.apple.dock expose-group-by-app -bool true
+
 ###############################################################################
 # Finder
 ###############################################################################
@@ -63,7 +66,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
