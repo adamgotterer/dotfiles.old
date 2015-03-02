@@ -42,3 +42,8 @@ PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # Application path for installing cask apps
 HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Git bash completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi

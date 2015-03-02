@@ -44,6 +44,7 @@ brew install macvim
 brew install pcre
 brew install readline
 brew install zsh
+brew install bash-completion
 
 # Remove outdated versions from the cellar.
 brew cleanup
