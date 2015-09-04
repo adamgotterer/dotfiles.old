@@ -46,3 +46,9 @@ HOMEBREW_CASK_OPTS="--appdir=/Applications"
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
+
+# Docker client
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST=tcp://192.168.59.100:2376
+export DOCKER_CERT_PATH=/Users/$USER/.docker/machine/machines/default
+export DOCKER_MACHINE_NAME="default"
