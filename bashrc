@@ -138,4 +138,7 @@ export GOROOT=/usr/local/go
 export GOPATH=~/sites/gospace
 
 # Setup editor
-export EDITOR=vim
+export EDITOR=gvim
+
+alias vim="gvim -v"
+alias vi="gvim -v"
