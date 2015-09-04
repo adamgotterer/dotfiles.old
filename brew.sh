@@ -29,12 +29,12 @@ brew install bash
 #brew install bash-completion
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
 # Install brew recipes
+brew install vim
 brew install git
 brew install ack
 brew install brew-cask
@@ -45,6 +45,9 @@ brew install pcre
 brew install readline
 brew install zsh
 brew install bash-completion
+brew install tmux
+brew install pgcli
+brew install httpie
 
 # Remove outdated versions from the cellar.
 brew cleanup
