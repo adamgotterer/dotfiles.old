@@ -37,6 +37,8 @@
 --type-set=handlebars=.handlebars
 
 --ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=.vagrant
 
 --ignore-file=ext:pg_dump
 --ignore-file=ext:csv
