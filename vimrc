@@ -55,6 +55,7 @@ set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 map <F2> :NERDTreeToggle<CR>
 :au BufNewFile,BufRead Vagrantfile :set filetype=ruby
+:au BufNewFile,BufRead Gemfile :set filetype=ruby
 :au BufNewFile,BufRead *.task :set filetype=ruby
 
 au WinLeave * set nocursorline
@@ -130,3 +131,5 @@ set laststatus=2
 
 " Turn on ragtag so we can get some nice formatting in eruby files
 let g:ragtag_global_maps = 1
+
+set clipboard=unnamed
