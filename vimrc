@@ -15,6 +15,7 @@ set matchpairs+=<:>         " show matching <> (html mainly) as well
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
+autocmd FileType crystal     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
 autocmd FileType ghmarkdown  setlocal shiftwidth=2 tabstop=2
@@ -48,7 +49,7 @@ filetype indent on
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set visualbell
-colorscheme adam
+colorscheme Tomorrow-Night-Bright
 set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
@@ -81,10 +82,23 @@ au FileType ruby setlocal  autoindent
 au FileType ruby setlocal tabstop=2
 au FileType ruby setlocal shiftwidth=2
 au FileType ruby setlocal softtabstop=2
+"
+"Crystal setup
+au FileType crystal setlocal  ic " Case insensitive search
+au FileType crystal setlocal  hls " Highlight search
+au FileType crystal setlocal  showmatch " Show matching brackets
+au FileType crystal setlocal  expandtab
+au FileType crystal setlocal  autoindent
+au FileType crystal setlocal tabstop=2
+au FileType crystal setlocal shiftwidth=2
+au FileType crystal setlocal softtabstop=2
 
 
 " Bind capital W to write
 command! W :w
+"
+" Bind capital Q to quit
+command! Q :q
 
 " Sudo write
 cmap W! w !sudo tee % >/dev/null
