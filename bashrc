@@ -129,13 +129,13 @@ fi
 PATH=/usr/local/sbin:$PATH:/usr/local/mysql/bin
 export PATH
 
+# Setup Python
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
 
-export EDITOR=vim
+# Setup GO
+export GOROOT=/usr/local/go
+export GOPATH=~/sites/gospace
 
-# Add git and svn branch names
+# Setup editor
 export EDITOR=vim
-
-alias vi=gvim
-alias vim=gvim
