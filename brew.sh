@@ -46,6 +46,7 @@ brew install readline
 brew install zsh
 brew install bash-completion
 brew install tmux
+brew install reattach-to-user-namespace # copy paste to max from tmux
 brew install pgcli
 brew install httpie
 
