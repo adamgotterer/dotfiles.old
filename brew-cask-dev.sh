@@ -35,6 +35,7 @@ brew cask install --appdir="/Applications" the-unarchiver
 brew cask install --appdir="/Applications" utorrent
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" virtualbox
+brew cask install --appdir="/Applications" dockertoolbox
 
 # Remove outdated versions from the cellar.
 brew cleanup
