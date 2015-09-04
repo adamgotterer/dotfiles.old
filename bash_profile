@@ -18,8 +18,7 @@ function parse_git_branch {
 function proml {
   case $TERM in
     xterm*)
-    #TITLEBAR='\[\033[0;35m\]\u@\h\[\033[0;33m\] \w\[\033[00m\]'
-    TITLEBAR='\[\033[0;35m\]\u\[\033[0;33m\] \w\[\033[00m\]'
+    TITLEBAR='\[\033[0;35m\]\w\[\033[00m\]'
     ;;
     *)
     TITLEBAR=""
