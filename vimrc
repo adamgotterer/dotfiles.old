@@ -1,5 +1,4 @@
 filetype off
-"let g:pathogen_disabled = ['syntastic']
 call pathogen#infect()
 call pathogen#helptags()
 set nocompatible            " don't be compatible with vi
@@ -12,6 +11,16 @@ set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
+
+" Syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
