@@ -5,7 +5,9 @@
 
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
-#eval "$(rbenv init -)"
+# Setup rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # Custom colors
 PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \w\[\033[00m\]: '

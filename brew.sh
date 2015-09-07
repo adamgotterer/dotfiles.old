@@ -49,6 +49,8 @@ brew install tmux
 brew install reattach-to-user-namespace # copy paste to max from tmux
 brew install pgcli
 brew install httpie
+brew install rbenv
+brew install ruby-build
 
 # Remove outdated versions from the cellar.
 brew cleanup
