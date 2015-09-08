@@ -140,3 +140,6 @@ set laststatus=2
 
 " Turn on ragtag so we can get some nice formatting in eruby files
 let g:ragtag_global_maps = 1
+
+" Enable mouse control in normal mode
+set mouse=nicr
