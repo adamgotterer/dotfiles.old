@@ -21,6 +21,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_loc_list_height = 2
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
@@ -143,3 +144,17 @@ let g:ragtag_global_maps = 1
 
 " Enable mouse control in normal mode
 set mouse=nicr
+
+" Cleaner split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Support for seamless tmux navigation between panes
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
