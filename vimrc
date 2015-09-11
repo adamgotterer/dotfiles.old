@@ -140,3 +140,11 @@ set laststatus=2
 
 " Turn on ragtag so we can get some nice formatting in eruby files
 let g:ragtag_global_maps = 1
+
+" Run checktime in buffers to see if the file timestamp has changed (forces
+" relaod prompt
+au CursorHold * if getcmdwintype() == '' | checktime | endif
+au CursorHoldI * if getcmdwintype() == '' | checktime | endif
+au BufEnter * if getcmdwintype() == '' | checktime | endif
+au CursorMoved * if getcmdwintype() == '' | checktime | endif
+au CursorMovedI * if getcmdwintype() == '' | checktime | endif
