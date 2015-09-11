@@ -5,6 +5,12 @@ Managed with rcm: https://github.com/thoughtbot/rcm
 http://robots.thoughtbot.com/rcm-for-rc-files-in-dotfiles-repos
 
 ```
+# Install RCM
+brew tap thoughtbot/formulae
+brew install rcm
+```
+
+```
 lsrc # Init
 
 rcup # link
