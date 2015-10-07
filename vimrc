@@ -48,10 +48,6 @@ set history=1000
 set wildmenu
 set wildmode=longest,list,full
 set scrolloff=3
-nnoremap <C-e> 3<C-e>
-nnoremap <C-e> 3<C-e>
-vnoremap <C-y> 3<C-y>
-vnoremap <C-y> 3<C-y>
 set ruler
 syntax on
 filetype plugin on
@@ -71,9 +67,6 @@ map <F2> :NERDTreeToggle<CR>
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
-
-"Stores .swp files in a single directory
-set directory=~/.vim/swap,.
 
 "delete trailing whitespace on save:
 au BufWritePre * mark `|:%s/\s\+$//e|normal ``
@@ -166,3 +159,18 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
+
+if !isdirectory(expand("~/.vim/.backupdir/"))
+    silent !echo "Creating backup dir..."
+    silent !mkdir -p ~/.vim/.backupdir
+endif
+
+if !isdirectory(expand("~/.vim/.swap/"))
+    silent !echo "Creating swap dir..."
+    silent !mkdir -p ~/.vim/.swap
+endif
+
+if !isdirectory(expand("~/.vim/.undo/"))
+    silent !echo "Creating undo dir..."
+    silent !mkdir -p ~/.vim/.undo
+endif
