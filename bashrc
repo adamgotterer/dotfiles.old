@@ -142,3 +142,5 @@ export EDITOR=gvim
 
 alias vim="gvim -v"
 alias vi="gvim -v"
+
+alias git="hub"
