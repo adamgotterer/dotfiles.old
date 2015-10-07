@@ -1,3 +1,21 @@
-[submodule "_vim/bundle/pyflakes"]
-	path = _vim/bundle/pyflakes
+[submodule "vim/bundle/pyflakes"]
+	path = vim/bundle/pyflakes
 	url = git://github.com/mitechie/pyflakes-pathogen.git
+[submodule "vim-tmux-navigator"]
+	path = vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "vim/bundle/vim-flavored-markdown"]
+	path = vim/bundle/vim-flavored-markdown
+	url = git@github.com:jtratner/vim-flavored-markdown.git
+[submodule "vim/bundle/pyflakes-pathogen"]
+	path = vim/bundle/pyflakes-pathogen
+	url = git@github.com:mitechie/pyflakes-pathogen.git
+[submodule "vim/bundle/ruby-matchit"]
+	path = vim/bundle/ruby-matchit
+	url = git@github.com:vim-scripts/ruby-matchit.git
+[submodule "vim/bundle/vim-vinegar"]
+	path = vim/bundle/vim-vinegar
+	url = git@github.com:tpope/vim-vinegar.git
