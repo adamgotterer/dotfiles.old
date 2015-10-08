@@ -1,7 +1,22 @@
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
 set nocompatible            " don't be compatible with vi
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Vundle plugins #########################################
+Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
+Plugin 'git@github.com:kevinw/pyflakes-vim.git'
+Plugin 'git@github.com:bling/vim-airline.git'
+Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
+Plugin 'git@github.com:mitechie/pyflakes-pathogen.git'
+Plugin 'git@github.com:vim-scripts/ruby-matchit.git'
+Plugin 'git@github.com:tpope/vim-vinegar.git'
+" end Vundle plugins #####################################
+call vundle#end()
+filetype plugin indent on
+
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
