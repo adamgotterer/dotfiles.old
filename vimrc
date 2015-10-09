@@ -11,7 +11,6 @@ Plugin 'git@github.com:kevinw/pyflakes-vim.git'
 Plugin 'git@github.com:bling/vim-airline.git'
 Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
 Plugin 'git@github.com:mitechie/pyflakes-pathogen.git'
-Plugin 'git@github.com:vim-scripts/ruby-matchit.git'
 Plugin 'git@github.com:tpope/vim-vinegar.git'
 " end Vundle plugins #####################################
 call vundle#end()
@@ -131,6 +130,10 @@ cmap W! w !sudo tee % >/dev/null
 "noremap! <Left> <Esc>
 "noremap  <Right> ""
 "noremap! <Right> <Esc>
+
+"" Disable the find in manual binding. Super annoying when navigating
+""  tmux/splits and accidentally hitting ctrl instead of shift
+noremap <S-k> ""
 
 map <F5> :setlocal spell! spelllang=en_us<CR>
 
