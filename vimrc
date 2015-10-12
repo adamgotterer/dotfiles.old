@@ -13,6 +13,7 @@ Plugin 'bling/vim-airline'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 " end Vundle plugins #####################################
 call vundle#end()
@@ -87,8 +88,7 @@ au WinEnter * set cursorline
 set cursorline
 
 "delete trailing whitespace on save:
-"au BufWritePre * mark `|:%s/\s\+$//e|normal ``
-autocmd BufWritePre *.py :%s/\s\+$//e
+au BufWritePre * mark `|:%s/\s\+$//e|normal ``
 
 "PHP tabs
 au FileType php setlocal tabstop=4
