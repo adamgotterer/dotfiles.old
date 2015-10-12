@@ -6,12 +6,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle plugins #########################################
-Plugin 'git@github.com:christoomey/vim-tmux-navigator.git'
-Plugin 'git@github.com:kevinw/pyflakes-vim.git'
-Plugin 'git@github.com:bling/vim-airline.git'
-Plugin 'git@github.com:jtratner/vim-flavored-markdown.git'
-Plugin 'git@github.com:mitechie/pyflakes-pathogen.git'
-Plugin 'git@github.com:tpope/vim-vinegar.git'
+Plugin 'gmarik/vundle'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'bling/vim-airline'
+Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'mitechie/pyflakes-pathogen'
+Plugin 'tpope/vim-vinegar'
+Plugin 'scrooloose/syntastic'
 " end Vundle plugins #####################################
 call vundle#end()
 filetype plugin indent on
@@ -25,6 +27,8 @@ set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
+
+set path=.,,** " Always set the path to the current files directory
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -83,7 +87,8 @@ au WinEnter * set cursorline
 set cursorline
 
 "delete trailing whitespace on save:
-au BufWritePre * mark `|:%s/\s\+$//e|normal ``
+"au BufWritePre * mark `|:%s/\s\+$//e|normal ``
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 "PHP tabs
 au FileType php setlocal tabstop=4
