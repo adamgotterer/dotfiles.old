@@ -88,8 +88,17 @@ au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
 
-"delete trailing whitespace on save:
-au BufWritePre * mark `|:%s/\s\+$//e|normal ``
+" remove trailing whitespace {{{
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+augroup striptrailingwhitespaces " {{{
+autocmd FileType c,cpp,java,php,ruby,python,sql,javascript,sh,jst,less,haskell,haml,coffee,scss,clojure
+  \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+augroup END " }}}
 
 "PHP tabs
 au FileType php setlocal tabstop=4
