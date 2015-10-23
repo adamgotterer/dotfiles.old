@@ -185,6 +185,10 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Split panes to the right and bottom (feels more natural)
+set splitbelow
+set splitright
+
 " Support for seamless tmux navigation between panes
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
