@@ -211,3 +211,7 @@ if !isdirectory(expand("~/.vim/.undo/"))
     silent !echo "Creating undo dir..."
     silent !mkdir -p ~/.vim/.undo
 endif
+
+set backupdir^=~/.vim/.backupdir//
+set directory^=~/.vim/.swap//                " where to put swap files
+set undodir^=~/.vim/.undo//                  " where to put undo files
