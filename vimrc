@@ -179,6 +179,12 @@ au CursorMovedI * if getcmdwintype() == '' | checktime | endif
 " Enable mouse control in normal mode
 set mouse=nicr
 
+" Resize current buffer by +/- 5
+nnoremap <C-O> :vertical resize -5<cr>
+nnoremap <C-I> :resize +5<cr>
+nnoremap <C-U> :resize -5<cr>
+nnoremap <C-Y> :vertical resize +5<cr>
+
 " Cleaner split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
