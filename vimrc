@@ -15,6 +15,7 @@ Plugin 'mitechie/pyflakes-pathogen'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
+Plugin 'ctrlpvim/ctrlp.vim'
 " end Vundle plugins #####################################
 call vundle#end()
 filetype plugin indent on
@@ -180,10 +181,10 @@ au CursorMovedI * if getcmdwintype() == '' | checktime | endif
 set mouse=nicr
 
 " Resize current buffer by +/- 5
-nnoremap <C-O> :vertical resize -5<cr>
-nnoremap <C-I> :resize +5<cr>
-nnoremap <C-U> :resize -5<cr>
-nnoremap <C-Y> :vertical resize +5<cr>
+nnoremap <leader>h :vertical resize -5<cr>
+nnoremap <leader>j :resize +5<cr>
+nnoremap <leader>k :resize -5<cr>
+nnoremap <leader>l :vertical resize +5<cr>
 
 " Cleaner split navigation
 nnoremap <C-J> <C-W><C-J>
