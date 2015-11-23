@@ -51,6 +51,7 @@ brew install pgcli
 brew install httpie
 brew install rbenv
 brew install ruby-build
+brew install fpp
 
 # Remove outdated versions from the cellar.
 brew cleanup
