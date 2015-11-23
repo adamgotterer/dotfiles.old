@@ -69,7 +69,7 @@ set bs=2
 set hidden
 nnoremap ' `
 nnoremap ` '
-let mapleader = ","
+" let mapleader = ","
 set history=1000
 "runtime macros/matchit.vim
 set wildmenu
@@ -158,10 +158,6 @@ cmap W! w !sudo tee % >/dev/null
 "noremap  <Right> ""
 "noremap! <Right> <Esc>
 
-"" Disable the find in manual binding. Super annoying when navigating
-""  tmux/splits and accidentally hitting ctrl instead of shift
-noremap <S-k> ""
-
 map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " Disable Macvim toolbar
@@ -214,6 +210,9 @@ nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
+
+"" Remap definition lookup since its fat fingered when navigating splits a lot
+nnoremap <leader>gd <S-k>
 
 " Show a visual marker at 100 characters
 set colorcolumn=100
