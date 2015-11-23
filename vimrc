@@ -215,8 +215,8 @@ nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
 nnoremap <leader>gd <S-k>
 
 " Show a visual marker at 100 characters
-set colorcolumn=100
-hi ColorColumn ctermbg=234
+set textwidth=110
+set colorcolumn=+0
 
 if !isdirectory(expand("~/.vim/.backupdir/"))
     silent !echo "Creating backup dir..."
