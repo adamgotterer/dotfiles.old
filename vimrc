@@ -16,6 +16,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'glittershark/vim-colors-solarized'
 " end Vundle plugins #####################################
 call vundle#end()
 filetype plugin indent on
@@ -76,7 +77,6 @@ filetype indent on
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
 set visualbell
-colorscheme Tomorrow-Night-Bright
 set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
@@ -88,6 +88,12 @@ map <F2> :NERDTreeToggle<CR>
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
 set cursorline
+
+" Color scheme
+let g:solarized_termcolors = 16
+let g:solarized_contrast = "high"
+colorscheme solarized
+set bg=dark
 
 " remove trailing whitespace {{{
 fun! <SID>StripTrailingWhitespaces()
