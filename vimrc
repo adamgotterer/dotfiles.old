@@ -17,6 +17,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'glittershark/vim-colors-solarized'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-sleuth'
 " end Vundle plugins #####################################
 call vundle#end()
 filetype plugin indent on
