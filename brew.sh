@@ -52,6 +52,7 @@ brew install httpie
 brew install rbenv
 brew install ruby-build
 brew install fpp
+brew install neovim/neovim/neovim
 
 # Remove outdated versions from the cellar.
 brew cleanup
