@@ -213,6 +213,9 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
 
+" Remap esc in terminal to go back to normal mode
+tnoremap <Esc> <C-\><C-n>
+
 "" Remap definition lookup since its fat fingered when navigating splits a lot
 nnoremap <leader>gd <S-k>
 
