@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+source ~/.bash_prompt
+
 #osx color terminal
 export CLICOLOR=1
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -180,5 +182,3 @@ export DOCKER_MACHINE_NAME="default"
 # Neovim hack to make <C-H> work for navigating windows (https://github.com/neovim/neovim/issues/2048)
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
-# Run twolfson/sexy-bash-prompt
-. ~/.bash_prompt
