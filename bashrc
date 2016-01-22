@@ -120,28 +120,6 @@ fi
   }
 } >/dev/null 2>/dev/null
 
-# Custom colors
-PS1='\[\033[0;35m\]\u@\h\[\033[0;33m\] \w\[\033[00m\]: '
-
-# Dynamically add the git branch to the terminal output
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-
-function proml {
-  case $TERM in
-    xterm*)
-    TITLEBAR='\[\033[0;35m\]\w\[\033[00m\]'
-    ;;
-    *)
-    TITLEBAR=""
-    ;;
-  esac
-
-PS1="${TITLEBAR} \[\033[0;34m\]\$(parse_git_branch)\[\033[00m\]: "
-}
-proml
-
 venwrap=`type -P virtualenvwrapper_bashrc`
 if [ "$venwrap" != "" ]; then
     source $venwrap
@@ -202,3 +180,5 @@ export DOCKER_MACHINE_NAME="default"
 # Neovim hack to make <C-H> work for navigating windows (https://github.com/neovim/neovim/issues/2048)
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
+# Run twolfson/sexy-bash-prompt
+. ~/.bash_prompt
