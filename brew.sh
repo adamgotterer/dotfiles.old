@@ -53,6 +53,12 @@ brew install rbenv
 brew install ruby-build
 brew install fpp
 brew install neovim/neovim/neovim
+brew install tree
+
+# Install diff so fancy
+brew install node
+brew install gnu-sed --with-default-names
+npm install -g diff-so-fancy
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -5,12 +5,11 @@
     diff = auto
     status = auto
     branch = auto
-
 [push]
     default = matching
-
 [core]
-	editor = /Applications/MacVim.app/Contents/MacOS/vim
+    editor = /usr/local/bin/nvim
 	quotepath = false
+    pager = diff-so-fancy | less --tabs=1,5 -R
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
