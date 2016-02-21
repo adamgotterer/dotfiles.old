@@ -54,6 +54,7 @@ brew install ruby-build
 brew install fpp
 brew install neovim/neovim/neovim
 brew install tree
+brew install ngrok
 
 # Install diff so fancy
 brew install node
