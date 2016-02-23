@@ -20,6 +20,13 @@ Plug 'glittershark/vim-colors-solarized'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
 Plug 'wesQ3/vim-windowswap'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-obsession'
+Plug 'mileszs/ack.vim'
+
 " end plugins #####################################
 call plug#end()
 
@@ -59,6 +66,13 @@ autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
 autocmd FileType ghmarkdown  setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+augroup ruby
+  au!
+  au FileType ruby nnoremap <buffer> gy orequire 'pry'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gY Orequire 'pry'; binding.pry<ESC>^
+augroup END
+
 set backspace=indent,eol,start
 set showmatch
 set incsearch
@@ -174,17 +188,21 @@ augroup END
 
 " forces air-line to show on all screens
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " Turn on ragtag so we can get some nice formatting in eruby files
 let g:ragtag_global_maps = 1
 
 " Run checktime in buffers to see if the file timestamp has changed (forces
 " relaod prompt
-au CursorHold * if getcmdwintype() == '' | checktime | endif
-au CursorHoldI * if getcmdwintype() == '' | checktime | endif
-au BufEnter * if getcmdwintype() == '' | checktime | endif
-au CursorMoved * if getcmdwintype() == '' | checktime | endif
-au CursorMovedI * if getcmdwintype() == '' | checktime | endif
+augroup buffer_check
+  au!
+  au CursorHold * if getcmdwintype() == '' | checktime | endif
+  au CursorHoldI * if getcmdwintype() == '' | checktime | endif
+  au BufEnter * if getcmdwintype() == '' | checktime | endif
+  au CursorMoved * if getcmdwintype() == '' | checktime | endif
+  au CursorMovedI * if getcmdwintype() == '' | checktime | endif
+augroup END
 
 " Enable mouse control in normal mode
 set mouse=nicr
@@ -241,3 +259,19 @@ endif
 set backupdir^=~/.vim/.backupdir//
 set directory^=~/.vim/.swap//                " where to put swap files
 set undodir^=~/.vim/.undo//                  " where to put undo files
+
+" vim-test mapping
+command! TestN :TestNearest
+command! TestF :TestFile
+command! TestA :TestSuite
+command! TestL :TestLast
+command! TestV :TestVisit
+
+" vim-test strategy
+let test#strategy = "neovim"
+
+" Resize the quick fix window
+augroup quickfixheight
+  autocmd!
+  autocmd FileType qf 20wincmd _
+augroup END
