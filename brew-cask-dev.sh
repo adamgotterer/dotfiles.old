@@ -18,6 +18,7 @@ brew upgrade
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap thoughtbot/formulae
+brew tap caskroom/fonts
 
 # Install applications
 brew cask install --appdir="/Applications" adium
@@ -36,7 +37,7 @@ brew cask install --appdir="/Applications" utorrent
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" dockertoolbox
-brew install hub # github command line
+brew cask install font-dejavu-sans # Powerline font
 
 # Remove outdated versions from the cellar.
 brew cleanup

@@ -51,6 +51,7 @@ brew install pgcli
 brew install httpie
 brew install rbenv
 brew install ruby-build
+brew install hub
 brew install fpp
 brew install neovim/neovim/neovim
 brew install tree
