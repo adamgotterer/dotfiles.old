@@ -179,6 +179,11 @@ export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_CERT_PATH=/Users/$USER/.docker/machine/machines/default
 export DOCKER_MACHINE_NAME="default"
 
+# Bash completion for docker
+. ~/.docker-compose-completion.sh
+. ~/.docker-machine-completion.sh
+. ~/.docker-completion.sh
+
 # Neovim hack to make <C-H> work for navigating windows (https://github.com/neovim/neovim/issues/2048)
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
