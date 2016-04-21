@@ -141,10 +141,10 @@ export GOPATH=~/sites/gospace
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # Setup editor
-export EDITOR=gvim
+export EDITOR=nvim
 
-alias vim="gvim -v"
-alias vi="gvim -v"
+alias vim="nvim"
+alias vi="nvim"
 
 alias git="hub"
 
