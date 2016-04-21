@@ -37,7 +37,8 @@ brew cask install --appdir="/Applications" utorrent
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" dockertoolbox
-brew cask install font-dejavu-sans # Powerline font
+brew cask install --appdir="/Applications" 1password
+brew cask install font-dejavu-sans-mono-for-powerline # Powerline font
 
 # Remove outdated versions from the cellar.
 brew cleanup
