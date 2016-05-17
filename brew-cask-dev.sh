@@ -39,6 +39,7 @@ brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" dockertoolbox
 brew cask install --appdir="/Applications" 1password
 brew cask install --appdir="/Applications" stay
+brew cask install --appdir="/Applications" macdown
 brew cask install font-dejavu-sans-mono-for-powerline # Powerline font
 
 # Remove outdated versions from the cellar.
