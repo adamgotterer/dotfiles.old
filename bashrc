@@ -182,6 +182,3 @@ DOCKER_TLS=no
 . ~/.docker-machine-completion.sh
 . ~/.docker-completion.sh
 
-# Neovim hack to make <C-H> work for navigating windows (https://github.com/neovim/neovim/issues/2048)
-infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
-tic $TERM.ti
