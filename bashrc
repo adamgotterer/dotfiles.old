@@ -182,3 +182,8 @@ DOCKER_TLS=no
 . ~/.docker-machine-completion.sh
 . ~/.docker-completion.sh
 
+# Start ssh-agent
+eval `ssh-agent -s`
+
+# Start the gpg-agent
+eval $(gpg-agent --daemon)
