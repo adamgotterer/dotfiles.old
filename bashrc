@@ -173,11 +173,9 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
 
-# Docker client
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_CERT_PATH=/Users/$USER/.docker/machine/machines/default
-export DOCKER_MACHINE_NAME="default"
+# Hack for docker mac beta that turns off the TLS check for docker-machine.
+#  We aren't using machine but for some reason it keeps checking for it
+DOCKER_TLS=no
 
 # Bash completion for docker
 . ~/.docker-compose-completion.sh
