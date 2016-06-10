@@ -52,6 +52,7 @@ let g:syntastic_enable_signs = 0
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript     setlocal shiftwidth=2 tabstop=2
 autocmd FileType crystal     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2

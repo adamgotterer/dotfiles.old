@@ -26,7 +26,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
-
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
 " end plugins #####################################
 call plug#end()
 
@@ -52,6 +53,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -61,6 +63,7 @@ let g:syntastic_enable_signs = 0
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript     setlocal shiftwidth=2 tabstop=2
 autocmd FileType crystal     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
@@ -276,3 +279,6 @@ augroup quickfixheight
   autocmd!
   autocmd FileType qf 20wincmd _
 augroup END
+
+" Ctrl-p Ignore list
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
