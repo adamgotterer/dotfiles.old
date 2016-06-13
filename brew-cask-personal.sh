@@ -19,11 +19,11 @@ brew tap caskroom/cask
 brew tap caskroom/versions
 brew tap thoughtbot/formulae
 
-brew cask install --appdir="/Applications" crashplan
-brew cask install --appdir="/Applications" jdownloader2
-brew cask install --appdir="/Applications" plex-media-server
-brew cask install --appdir="/Applications" vlc
-brew cask install --appdir="/Applications" steam
+brew cask install crashplan
+brew cask install jdownloader2
+brew cask install plex-media-server
+brew cask install vlc
+brew cask install steam
 
 # Remove outdated versions from the cellar.
 brew cleanup

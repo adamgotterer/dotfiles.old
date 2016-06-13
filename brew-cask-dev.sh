@@ -21,25 +21,25 @@ brew tap thoughtbot/formulae
 brew tap caskroom/fonts
 
 # Install applications
-brew cask install --appdir="/Applications" adium
-brew cask install --appdir="/Applications" appcleaner
-brew cask install --appdir="/Applications" chefdk
-brew cask install --appdir="/Applications" divvy
-brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" iterm2
-brew cask install --appdir="/Applications" java
-brew cask install --appdir="/Applications" qlstephen
-brew cask install --appdir="/Applications" spotify
-brew cask install --appdir="/Applications" the-unarchiver
-brew cask install --appdir="/Applications" utorrent
-brew cask install --appdir="/Applications" vagrant
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" dockertoolbox
-brew cask install --appdir="/Applications" 1password
-brew cask install --appdir="/Applications" stay
-brew cask install --appdir="/Applications" macdown
+brew cask install adium
+brew cask install appcleaner
+brew cask install chefdk
+brew cask install divvy
+brew cask install dropbox
+brew cask install firefox
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install java
+brew cask install qlstephen
+brew cask install spotify
+brew cask install the-unarchiver
+brew cask install utorrent
+brew cask install vagrant
+brew cask install virtualbox
+brew cask install dockertoolbox
+brew cask install 1password
+brew cask install stay
+brew cask install macdown
 brew cask install font-dejavu-sans-mono-for-powerline # Powerline font
 
 # Remove outdated versions from the cellar.
