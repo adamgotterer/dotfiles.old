@@ -176,7 +176,6 @@ DOCKER_TLS=no
 
 # Bash completion for docker
 . ~/.docker-compose-completion.sh
-. ~/.docker-machine-completion.sh
 . ~/.docker-completion.sh
 
 # Start ssh-agent
