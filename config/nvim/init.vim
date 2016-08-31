@@ -104,7 +104,6 @@ set visualbell
 set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
-map <F2> :NERDTreeToggle<CR>
 :au BufNewFile,BufRead Vagrantfile :set filetype=ruby
 :au BufNewFile,BufRead Gemfile :set filetype=ruby
 :au BufNewFile,BufRead *.task :set filetype=ruby
@@ -282,3 +281,4 @@ augroup END
 
 " Ctrl-p Ignore list
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_show_hidden = 1
