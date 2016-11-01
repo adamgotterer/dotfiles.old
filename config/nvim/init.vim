@@ -34,6 +34,9 @@ call plug#end()
 filetype plugin indent on
 
 set nowrap                  " don't wrap text
+set formatoptions=l wrapmargin=0 " don't break text to a new line when it reaches the textwidth
+set textwidth=110           " Show a visual marker at 100 characters
+set colorcolumn=+0
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set tabstop=4               " <tab> inserts 4 spaces
@@ -53,7 +56,6 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_ruby_checkers=['rubocop']
-let g:syntastic_ruby_rubocop_args='--display-cop-names'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -240,10 +242,6 @@ tnoremap <Esc> <C-\><C-n>
 
 "" Remap definition lookup since its fat fingered when navigating splits a lot
 nnoremap <leader>gd <S-k>
-
-" Show a visual marker at 100 characters
-set textwidth=110
-set colorcolumn=+0
 
 if !isdirectory(expand("~/.vim/.backupdir/"))
     silent !echo "Creating backup dir..."
