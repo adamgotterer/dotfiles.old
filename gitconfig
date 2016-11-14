@@ -1,6 +1,6 @@
 [user]
 	name = Adam Gotterer
-	email = agotterer@nomi.com
+	email = adam@knotch.com
 [color]
     diff = auto
     status = auto
@@ -12,4 +12,5 @@
 	quotepath = false
     pager = diff-so-fancy | less --tabs=1,5 -R
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    hash = log --pretty=format:'%h' -n 1  
