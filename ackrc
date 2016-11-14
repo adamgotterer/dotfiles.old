@@ -43,3 +43,4 @@
 --ignore-file=ext:pg_dump
 --ignore-file=ext:csv
 --ignore-file=ext:log
+--ignore-file=ext:tfstate
