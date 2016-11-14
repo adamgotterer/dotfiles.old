@@ -145,13 +145,7 @@ export EDITOR=nvim
 
 alias vim="nvim"
 alias vi="nvim"
-
 alias git="hub"
-
-#export EC2_HOME=~/.ec2
-#export PATH=$PATH:$EC2_HOME/bin
-#export EC2_PRIVATE_KEY=`ls $EC2_HOME/pk-*.pem`
-#export EC2_CERT=`ls $EC2_HOME/cert-*.pem`
 
 # Setup rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
