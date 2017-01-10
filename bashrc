@@ -147,17 +147,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias git="hub"
 
-# Setup rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Make coreutils available on the path
 PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # Move up a directory a certain number of times. Example: mcd 5 will go up 5 directories
 mcd () { cd $(printf "../%.s" $(seq 1 $1)); }
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/bin:$PATH
 
 # Git bash completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -177,3 +171,7 @@ eval `ssh-agent -s`
 
 # Start the gpg-agent
 eval $(gpg-agent --daemon)
+
+# Setup rbenv
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH"
