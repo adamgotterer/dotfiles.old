@@ -19,6 +19,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'glittershark/vim-colors-solarized'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-eunuch'
 Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-projectionist'
@@ -28,6 +29,7 @@ Plug 'tpope/vim-obsession'
 Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'hashivim/vim-terraform'
 " end plugins #####################################
 call plug#end()
 
