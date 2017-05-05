@@ -20,12 +20,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-
 # Set up TERM variables.
 # vt100 and xterm have no color in vim (at least on unixs), but if we call them xterm-color, they will.
 # (vt100 for F-Secure SSH.)
@@ -122,14 +116,6 @@ fi
   }
 } >/dev/null 2>/dev/null
 
-venwrap=`type -P virtualenvwrapper_bashrc`
-if [ "$venwrap" != "" ]; then
-    source $venwrap
-fi
-
-PATH=/usr/local/sbin:$PATH:/usr/local/mysql/bin
-export PATH
-
 # Setup Python
 PYTHONSTARTUP=~/.pythonrc.py
 export PYTHONSTARTUP
@@ -169,8 +155,8 @@ DOCKER_TLS=no
 # Start ssh-agent
 eval `ssh-agent -s`
 
-# Start the gpg-agent
-eval $(gpg-agent --daemon)
+# Start the gpg-agent (disabled since I think systemd now handles this)
+# eval $(gpg-agent --daemon)
 
 # Setup rbenv
 eval "$(rbenv init -)"
