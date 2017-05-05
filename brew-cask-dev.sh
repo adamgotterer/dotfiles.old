@@ -40,6 +40,7 @@ brew cask install 1password
 brew cask install stay
 brew cask install macdown
 brew cask install font-dejavu-sans-mono-for-powerline # Powerline font
+brew cask install hammerspoon
 
 # Remove outdated versions from the cellar.
 brew cleanup

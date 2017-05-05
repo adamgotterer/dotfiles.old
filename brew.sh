@@ -56,6 +56,7 @@ brew install fpp
 brew install neovim/neovim/neovim
 brew install tree
 brew install ngrok
+brew install ctags
 
 # Install diff so fancy
 brew install node
@@ -64,3 +65,8 @@ npm install -g diff-so-fancy
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# Setup ctags for rbenv
+mkdir -p ~/.rbenv/plugins
+git clone git://github.com/tpope/rbenv-ctags.git ~/.rbenv/plugins/rbenv-ctags
+rbenv ctags
