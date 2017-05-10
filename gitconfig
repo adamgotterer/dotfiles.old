@@ -1,6 +1,6 @@
 [user]
-	name = Adam Gotterer
-	email = adam@knotch.com
+    name = Adam Gotterer
+    email = adam@knotch.com
 [color]
     diff = auto
     status = auto
@@ -14,3 +14,10 @@
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     hash = log --pretty=format:'%h' -n 1  
+    prune = fetch --prune
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
+[status]
+    showUntrackedFiles = all
+[transfer]
+    fsckobjects = true
