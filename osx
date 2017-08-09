@@ -104,6 +104,6 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "cfprefsd", "Dock" "Finder" "SystemUIServer" "Saafari"; do
+for app in "cfprefsd", "Dock" "Finder" "SystemUIServer" "Safari"; do
 	killall "${app}" > /dev/null 2>&1
 done
