@@ -30,6 +30,7 @@ Plug 'mileszs/ack.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'hashivim/vim-terraform'
+Plug 'elixir-editors/vim-elixir'
 " end plugins #####################################
 call plug#end()
 
