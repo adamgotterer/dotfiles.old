@@ -161,3 +161,6 @@ eval `ssh-agent -s`
 # Setup rbenv
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Save all bash history
+export PROMPT_COMMAND='history -a'
