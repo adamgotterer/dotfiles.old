@@ -31,6 +31,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'hashivim/vim-terraform'
 Plug 'elixir-editors/vim-elixir'
+Plug 'troydm/zoomwintab.vim'
 " end plugins #####################################
 call plug#end()
 
@@ -39,7 +40,7 @@ filetype plugin indent on
 set nowrap                  " don't wrap text
 set formatoptions=l wrapmargin=0 " don't break text to a new line when it reaches the textwidth
 set textwidth=110           " Show a visual marker at 100 characters
-set colorcolumn=+0
+set colorcolumn=+0          " Set a visual marker at 100 characters
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set tabstop=4               " <tab> inserts 4 spaces
@@ -59,6 +60,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_ruby_rubocop_args='--display-cop-names'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -216,11 +218,18 @@ augroup END
 " Enable mouse control in normal mode
 set mouse=nicr
 
+" Wrap toggling
+nmap <Leader>w :set wrap!<cr>
+nmap <Leader>W :set nowrap<cr>
+
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
 nnoremap <leader>j :resize +5<cr>
 nnoremap <leader>k :resize -5<cr>
 nnoremap <leader>l :vertical resize +5<cr>
+
+" Zoomwintab.vim
+noremap <leader>z :ZoomWinTabToggle<cr>
 
 " Cleaner split navigation
 nnoremap <C-J> <C-W><C-J>
