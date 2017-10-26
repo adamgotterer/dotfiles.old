@@ -32,6 +32,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'hashivim/vim-terraform'
 Plug 'elixir-editors/vim-elixir'
 Plug 'troydm/zoomwintab.vim'
+Plug 'scrooloose/nerdcommenter'
 " end plugins #####################################
 call plug#end()
 
