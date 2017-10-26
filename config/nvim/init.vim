@@ -146,11 +146,12 @@ au FileType php setlocal softtabstop=4
 au FileType php setlocal noexpandtab
 
 "Ruby setup
-au FileType ruby setlocal  ic " Case insensitive search
-au FileType ruby setlocal  hls " Highlight search
-au FileType ruby setlocal  showmatch " Show matching brackets
-au FileType ruby setlocal  expandtab
-au FileType ruby setlocal  autoindent
+au FileType ruby setlocal ic " Case insensitive search
+au FileType ruby setlocal hls " Highlight search
+au FileType ruby setlocal showmatch " Show matching brackets
+au FileType ruby setlocal expandtab
+au FileType ruby setlocal autoindent
+au FileType ruby setlocal smartindent
 au FileType ruby setlocal tabstop=2
 au FileType ruby setlocal shiftwidth=2
 au FileType ruby setlocal softtabstop=2
@@ -221,6 +222,14 @@ set mouse=nicr
 " Wrap toggling
 nmap <Leader>w :set wrap!<cr>
 nmap <Leader>W :set nowrap<cr>
+
+" Move a line of text up or down
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
 
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
