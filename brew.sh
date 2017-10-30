@@ -57,6 +57,7 @@ brew install neovim/neovim/neovim
 brew install tree
 brew install ngrok
 brew install ctags
+brew install exa
 
 # Install diff so fancy
 brew install node
