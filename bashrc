@@ -127,10 +127,10 @@ export GOPATH=~/sites/gospace
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
 
 # Setup editor
-export EDITOR=nvim
+export EDITOR=vim
 
-alias vim="nvim"
-alias vi="nvim"
+alias vim="vim"
+alias vi="vim"
 alias git="hub"
 
 # Make coreutils available on the path
