@@ -1,29 +1,47 @@
+" proper control character: X 
+
 filetype off
 set nocompatible            " don't be compatible with vi
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" Vundle plugins #########################################
-Plugin 'gmarik/vundle'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'kevinw/pyflakes-vim'
-Plugin 'bling/vim-airline'
-Plugin 'jtratner/vim-flavored-markdown'
-Plugin 'mitechie/pyflakes-pathogen'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'glittershark/vim-colors-solarized'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-sleuth'
-" end Vundle plugins #####################################
-call vundle#end()
+" Plugins #########################################
+Plug 'gmarik/vundle'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'kevinw/pyflakes-vim'
+Plug 'bling/vim-airline'
+Plug 'jtratner/vim-flavored-markdown'
+Plug 'mitechie/pyflakes-pathogen'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'glittershark/vim-colors-solarized'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-eunuch'
+Plug 'wesQ3/vim-windowswap'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-obsession'
+Plug 'mileszs/ack.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'hashivim/vim-terraform'
+Plug 'elixir-editors/vim-elixir'
+Plug 'troydm/zoomwintab.vim'
+Plug 'scrooloose/nerdcommenter'
+" end plugins #####################################
+call plug#end()
+
 filetype plugin indent on
 
 set nowrap                  " don't wrap text
+set formatoptions=l wrapmargin=0 " don't break text to a new line when it reaches the textwidth
+set textwidth=110           " Show a visual marker at 100 characters
+set colorcolumn=+0          " Set a visual marker at 100 characters
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set tabstop=4               " <tab> inserts 4 spaces
@@ -43,6 +61,8 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_ruby_checkers=['rubocop']
+let g:syntastic_ruby_rubocop_args='--display-cop-names'
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
@@ -51,13 +71,20 @@ let g:syntastic_loc_list_height = 2
 let g:syntastic_enable_signs = 0
 
 set nu
-autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript     setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType javascript     setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType crystal     setlocal shiftwidth=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
 autocmd FileType ghmarkdown  setlocal shiftwidth=2 tabstop=2
 autocmd FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+augroup ruby
+  au!
+  au FileType ruby nnoremap <buffer> gy orequire 'pry'; binding.pry<ESC>^
+  au FileType ruby nnoremap <buffer> gY Orequire 'pry'; binding.pry<ESC>^
+augroup END
+
 set backspace=indent,eol,start
 set showmatch
 set incsearch
@@ -82,11 +109,9 @@ filetype plugin on
 filetype indent on
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
-set visualbell
 set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
 nmap <silent> <leader>s :set nolist!<CR>
-map <F2> :NERDTreeToggle<CR>
 :au BufNewFile,BufRead Vagrantfile :set filetype=ruby
 :au BufNewFile,BufRead Gemfile :set filetype=ruby
 :au BufNewFile,BufRead *.task :set filetype=ruby
@@ -98,6 +123,7 @@ set cursorline
 " Color scheme
 let g:solarized_termcolors = 16
 let g:solarized_contrast = "high"
+let g:solarized_termtrans = 1
 colorscheme solarized
 set bg=dark
 
@@ -109,7 +135,7 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 augroup striptrailingwhitespaces " {{{
-autocmd FileType c,cpp,java,php,ruby,python,sql,javascript,sh,jst,less,haskell,haml,coffee,scss,clojure
+autocmd FileType c,cpp,java,php,ruby,python,sql,tf,tfvars,js,javascript,sh,jst,less,haskell,haml,coffee,scss,clojure
   \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 augroup END " }}}
 
@@ -120,11 +146,12 @@ au FileType php setlocal softtabstop=4
 au FileType php setlocal noexpandtab
 
 "Ruby setup
-au FileType ruby setlocal  ic " Case insensitive search
-au FileType ruby setlocal  hls " Highlight search
-au FileType ruby setlocal  showmatch " Show matching brackets
-au FileType ruby setlocal  expandtab
-au FileType ruby setlocal  autoindent
+au FileType ruby setlocal ic " Case insensitive search
+au FileType ruby setlocal hls " Highlight search
+au FileType ruby setlocal showmatch " Show matching brackets
+au FileType ruby setlocal expandtab
+au FileType ruby setlocal autoindent
+au FileType ruby setlocal smartindent
 au FileType ruby setlocal tabstop=2
 au FileType ruby setlocal shiftwidth=2
 au FileType ruby setlocal softtabstop=2
@@ -173,26 +200,45 @@ augroup END
 
 " forces air-line to show on all screens
 set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " Turn on ragtag so we can get some nice formatting in eruby files
 let g:ragtag_global_maps = 1
 
 " Run checktime in buffers to see if the file timestamp has changed (forces
 " relaod prompt
-au CursorHold * if getcmdwintype() == '' | checktime | endif
-au CursorHoldI * if getcmdwintype() == '' | checktime | endif
-au BufEnter * if getcmdwintype() == '' | checktime | endif
-au CursorMoved * if getcmdwintype() == '' | checktime | endif
-au CursorMovedI * if getcmdwintype() == '' | checktime | endif
+augroup buffer_check
+  au!
+  au CursorHold * if getcmdwintype() == '' | checktime | endif
+  au CursorHoldI * if getcmdwintype() == '' | checktime | endif
+  au BufEnter * if getcmdwintype() == '' | checktime | endif
+  au CursorMoved * if getcmdwintype() == '' | checktime | endif
+  au CursorMovedI * if getcmdwintype() == '' | checktime | endif
+augroup END
 
 " Enable mouse control in normal mode
 set mouse=nicr
+
+" Wrap toggling
+nmap <Leader>w :set wrap!<cr>
+nmap <Leader>W :set nowrap<cr>
+
+" Move a line of text up or down
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
 
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
 nnoremap <leader>j :resize +5<cr>
 nnoremap <leader>k :resize -5<cr>
 nnoremap <leader>l :vertical resize +5<cr>
+
+" Zoomwintab.vim
+noremap <leader>z :ZoomWinTabToggle<cr>
 
 " Cleaner split navigation
 nnoremap <C-J> <C-W><C-J>
@@ -212,12 +258,11 @@ nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <c-;> :TmuxNavigatePrevious<cr>
 
+" Remap esc in terminal to go back to normal mode
+" tnoremap <Esc> <C-\><C-n>
+
 "" Remap definition lookup since its fat fingered when navigating splits a lot
 nnoremap <leader>gd <S-k>
-
-" Show a visual marker at 100 characters
-set textwidth=110
-set colorcolumn=+0
 
 if !isdirectory(expand("~/.vim/.backupdir/"))
     silent !echo "Creating backup dir..."
@@ -237,3 +282,23 @@ endif
 set backupdir^=~/.vim/.backupdir//
 set directory^=~/.vim/.swap//                " where to put swap files
 set undodir^=~/.vim/.undo//                  " where to put undo files
+
+" vim-test mapping
+command! TestN :TestNearest
+command! TestF :TestFile
+command! TestA :TestSuite
+command! TestL :TestLast
+command! TestV :TestVisit
+
+" vim-test strategy
+let test#strategy = "neovim"
+
+" Resize the quick fix window
+augroup quickfixheight
+  autocmd!
+  autocmd FileType qf 20wincmd _
+augroup END
+
+" Ctrl-p Ignore list
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_show_hidden = 1
