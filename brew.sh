@@ -46,7 +46,7 @@ brew install readline
 brew install zsh
 brew install bash-completion
 brew install tmux
-brew install reattach-to-user-namespace # copy paste to max from tmux
+brew install reattach-to-user-namespace # copy paste to mac from tmux
 brew install pgcli
 brew install httpie
 brew install rbenv
@@ -58,6 +58,7 @@ brew install tree
 brew install ngrok
 brew install ctags
 brew install exa
+brew install fzf # Required for tmux laktak/extrakto
 
 # Install diff so fancy
 brew install node
