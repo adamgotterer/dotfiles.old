@@ -153,7 +153,7 @@ DOCKER_TLS=no
 . ~/.docker-completion.sh
 
 # Start ssh-agent
-eval `ssh-agent -s`
+eval `ssh-agent -s` > /dev/null
 
 # Start the gpg-agent (disabled since I think systemd now handles this)
 # eval $(gpg-agent --daemon)
