@@ -59,6 +59,7 @@ brew install ngrok
 brew install ctags
 brew install exa
 brew install fzf # Required for tmux laktak/extrakto
+brew install fd
 
 # Install diff so fancy
 brew install node
