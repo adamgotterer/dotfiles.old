@@ -52,6 +52,7 @@ set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
 set lazyredraw
 set ttyfast
+set backupcopy=yes          " Needed to get proper user ownership and syncing to Docker for things like gaurd
 
 set path=.,,** " Always set the path to the current files directory
 
@@ -300,5 +301,8 @@ augroup quickfixheight
 augroup END
 
 " Ctrl-p Ignore list
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*__pycache__/*
 let g:ctrlp_show_hidden = 1
+
+" NerdSpace
+let g:NERDSpaceDelims = 1
