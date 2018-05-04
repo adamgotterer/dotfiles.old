@@ -225,12 +225,12 @@ nmap <Leader>w :set wrap!<cr>
 nmap <Leader>W :set nowrap<cr>
 
 " Move a line of text up or down
-nnoremap <A-j> :m+<CR>==
-nnoremap <A-k> :m-2<CR>==
-inoremap <A-j> <Esc>:m+<CR>==gi
-inoremap <A-k> <Esc>:m-2<CR>==gi
-vnoremap <A-j> :m'>+<CR>gv=gv
-vnoremap <A-k> :m-2<CR>gv=gv
+nnoremap <esc>j :m+<CR>==
+nnoremap <esc>k :m-2<CR>==
+inoremap <esc>j <Esc>:m+<CR>==gi
+inoremap <esc>k <Esc>:m-2<CR>==gi
+vnoremap <esc>j :m'>+<CR>gv=gv
+vnoremap <esc>k :m-2<CR>gv=gv
 
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
