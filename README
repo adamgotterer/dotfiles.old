@@ -1,4 +1,4 @@
-# Dotfiles
+# My Dotfiles
 
 Managed with rcm: https://github.com/thoughtbot/rcm
 
@@ -14,4 +14,13 @@ brew install rcm
 lsrc # Init
 
 rcup # link
+```
+
+## Setup HUB CLI
+~/.config/hub
+```
+github.com:
+- user: adamgotterer
+  oauth_token: XXXX
+  protocol: https
 ```

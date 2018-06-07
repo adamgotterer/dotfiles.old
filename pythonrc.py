@@ -5,17 +5,20 @@ regular Python commands, so do what you will. Your ~/.inputrc file can greatly
 complement this file.
 
 """
+
+import atexit
 import os
 
 try:
     import readline
-    import rlcompleter
-    import atexit
 except ImportError:
-    print("You need readline, rlcompleter, and atexit")
-
-readline.parse_and_bind("tab: complete")
-readline.parse_and_bind ("bind ^I rl_complete")
+    print("Module readline not available.")
+else:
+    import rlcompleter
+    if 'libedit' in readline.__doc__:
+        readline.parse_and_bind("bind ^I rl_complete")
+    else:
+        readline.parse_and_bind("tab: complete")
 
 class Completer(object):
     def __init__(self):
@@ -94,48 +97,6 @@ def my_displayhook(value):
         del pprint
 
 sys.displayhook = my_displayhook
-
-# Django Helpers
-def SECRET_KEY():
-    "Generates a new SECRET_KEY that can be used in a project settings file." 
-
-    from random import choice
-    return ''.join(
-            [choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)')
-                for i in range(50)])
-
-# If we're working with a Django project, set up the environment
-if 'DJANGO_SETTINGS_MODULE' in os.environ:
-    from django.db.models.loading import get_models
-    from django.test.client import Client
-    from django.test.utils import setup_test_environment, teardown_test_environment
-    from django.conf import settings as S
-
-    class DjangoModels(object):
-        """Loop through all the models in INSTALLED_APPS and import them."""
-        def __init__(self):
-            for m in get_models():
-                setattr(self, m.__name__, m)
-
-    A = DjangoModels()
-    C = Client()
-
-    WELCOME += """%(Green)s
-    Django environment detected.
-* Your INSTALLED_APPS models are available as `A`.
-* Your project settings are available as `S`.
-* The Django test client is available as `C`.
-%(Normal)s""" % _c
-
-    setup_test_environment()
-    S.DEBUG_PROPAGATE_EXCEPTIONS = True
-
-    WELCOME += """%(LightPurple)s
-Warning: the Django test environment has been set up; to restore the
-normal environment call `teardown_test_environment()`.
-
-Warning: DEBUG_PROPAGATE_EXCEPTIONS has been set to True.
-%(Normal)s""" % _c
 
 # Start an external editor with \e
 # http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/438813/

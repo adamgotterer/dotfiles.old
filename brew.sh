@@ -60,6 +60,7 @@ brew install ctags
 brew install exa
 brew install fzf # Required for tmux laktak/extrakto
 brew install fd
+brew install pipenv
 
 # Install diff so fancy
 brew install node

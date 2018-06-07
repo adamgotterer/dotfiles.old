@@ -33,6 +33,10 @@ Plug 'hashivim/vim-terraform'
 Plug 'elixir-editors/vim-elixir'
 Plug 'troydm/zoomwintab.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'kchmck/vim-coffee-script'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-rhubarb'
 " end plugins #####################################
 call plug#end()
 
@@ -225,12 +229,14 @@ nmap <Leader>w :set wrap!<cr>
 nmap <Leader>W :set nowrap<cr>
 
 " Move a line of text up or down
-nnoremap <esc>j :m+<CR>==
-nnoremap <esc>k :m-2<CR>==
-inoremap <esc>j <Esc>:m+<CR>==gi
-inoremap <esc>k <Esc>:m-2<CR>==gi
-vnoremap <esc>j :m'>+<CR>gv=gv
-vnoremap <esc>k :m-2<CR>gv=gv
+"
+" The execute is a hack to get alt to correctly map
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+inoremap <A-j> <Esc>:m+<CR>==gi
+inoremap <A-k> <Esc>:m-2<CR>==gi
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
 
 " Resize current buffer by +/- 5
 nnoremap <leader>h :vertical resize -5<cr>
@@ -303,6 +309,8 @@ augroup END
 " Ctrl-p Ignore list
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*__pycache__/*
 let g:ctrlp_show_hidden = 1
+" Ignore files in gitignore
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " NerdSpace
 let g:NERDSpaceDelims = 1
