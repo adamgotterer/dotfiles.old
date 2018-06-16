@@ -61,6 +61,7 @@ brew install exa
 brew install fzf # Required for tmux laktak/extrakto
 brew install fd
 brew install pipenv
+brew install gnupg2
 
 # Install diff so fancy
 brew install node
