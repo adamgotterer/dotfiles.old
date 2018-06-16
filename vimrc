@@ -37,6 +37,7 @@ Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'kchmck/vim-coffee-script'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rhubarb'
+Plug 'rhysd/vim-crystal'
 " end plugins #####################################
 call plug#end()
 
