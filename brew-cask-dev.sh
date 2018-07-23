@@ -46,3 +46,4 @@ brew cask install gpg-suite
 # Remove outdated versions from the cellar.
 brew cleanup
 
+npm install -g eslint babel-eslint eslint-plugin-import eslint-config-airbnb-base

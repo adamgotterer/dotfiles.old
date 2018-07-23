@@ -68,13 +68,25 @@ set statusline+=%*
 
 let g:syntastic_ruby_checkers=['rubocop']
 let g:syntastic_ruby_rubocop_args='--display-cop-names'
-let g:syntastic_javascript_checkers = ['jshint']
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_loc_list_height = 2
-let g:syntastic_enable_signs = 0
+let g:syntastic_enable_signs = 1
+
+let g:syntastic_error_symbol = '🚫'
+let g:syntastic_style_error_symbol = '🚫'
+let g:syntastic_warning_symbol = '🔔'
+let g:syntastic_style_warning_symbol = '🔔'
+highlight link SyntasticErrorSign SignColumn
+highlight link SyntasticWarningSign SignColumn
+highlight link SyntasticStyleErrorSign SignColumn
+highlight link SyntasticStyleWarningSign SignColumn
 
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2 expandtab
@@ -114,13 +126,14 @@ syntax on
 filetype plugin on
 filetype indent on
 set listchars=tab:>-,trail:?,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
 set scrolloff=3
 set listchars=tab:>-,trail:?,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
 :au BufNewFile,BufRead Vagrantfile :set filetype=ruby
 :au BufNewFile,BufRead Gemfile :set filetype=ruby
 :au BufNewFile,BufRead *.task :set filetype=ruby
+
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+nmap <silent> <leader>hg :sign unplace *<CR> " Hide the gutter
 
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
