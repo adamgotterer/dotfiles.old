@@ -91,7 +91,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 set nu
 autocmd FileType ruby     setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType javascript     setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType crystal     setlocal shiftwidth=2 tabstop=2
+autocmd FileType crystal setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType html     setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby  setlocal shiftwidth=2 tabstop=2
 autocmd FileType ghmarkdown  setlocal shiftwidth=2 tabstop=2
@@ -107,7 +107,6 @@ set backspace=indent,eol,start
 set showmatch
 set incsearch
 set hlsearch
-nmap <silent> <leader>n :silent :nohlsearch<CR>
 set ignorecase
 set smartcase
 set virtualedit=all
@@ -115,7 +114,6 @@ set bs=2
 set hidden
 nnoremap ' `
 nnoremap ` '
-" let mapleader = ","
 set history=1000
 "runtime macros/matchit.vim
 set wildmenu
@@ -154,7 +152,7 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 augroup striptrailingwhitespaces " {{{
-autocmd FileType c,cpp,java,php,ruby,python,sql,tf,tfvars,js,javascript,sh,jst,less,haskell,haml,coffee,scss,clojure
+autocmd FileType c,cpp,java,php,ruby,python,sql,tf,tfvars,js,javascript,sh,jst,less,haskell,haml,coffee,scss,clojure,crystal
   \ autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 augroup END " }}}
 
@@ -176,11 +174,11 @@ au FileType ruby setlocal shiftwidth=2
 au FileType ruby setlocal softtabstop=2
 "
 "Crystal setup
-au FileType crystal setlocal  ic " Case insensitive search
-au FileType crystal setlocal  hls " Highlight search
-au FileType crystal setlocal  showmatch " Show matching brackets
-au FileType crystal setlocal  expandtab
-au FileType crystal setlocal  autoindent
+au FileType crystal setlocal ic " Case insensitive search
+au FileType crystal setlocal hls " Highlight search
+au FileType crystal setlocal showmatch " Show matching brackets
+au FileType crystal setlocal expandtab
+au FileType crystal setlocal autoindent
 au FileType crystal setlocal tabstop=2
 au FileType crystal setlocal shiftwidth=2
 au FileType crystal setlocal softtabstop=2
